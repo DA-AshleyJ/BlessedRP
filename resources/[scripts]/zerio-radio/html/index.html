@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="./libs/materialize/style.css">
+    <link rel="stylesheet" href="./libs/sweetalert2/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container" id="main" style="display:none;">
+        <div class="top-container">
+            <h1 class="top-time">12:00</h1>
+            <i class="material-icons top-battery">battery_full</i>
+            <h1 class="top-volume" style="margin-right:20px;">100%</h1>
+            <i class="material-icons top-volume-icon">volume_up</i>
+        </div>
+
+        <div class="items-container">
+            <div class="item-container default-tab">
+                <div class="info-div status">
+                    <div class="text tooltip-bottom" data-tippy-content="Your status">
+                        <h1 class="status-label">My Status</h1>
+                        <h2 class="status-description street-label">Algonquin Boulevard</h2>
+                    </div>
+                    <div class="icons">
+                        <i class="material-icons status-icon">event_note</i>
+                    </div>
+                </div>
+
+                <div class="info-div radio">
+                    <div class="top">
+                        <div class="top-icons">
+                            <i class="material-icons top-status-icon">network_cell</i>
+                            <i class="material-icons top-status-icon">settings_bluetooth</i>
+                            <i class="material-icons top-status-icon">settings_remote</i>
+                            <i class="material-icons top-status-icon">storage</i>
+                        </div>
+                        <div class="text tooltip-top" data-tippy-content="Your radio status">
+                            <h1 class="status-label radio-status">Not in any radio</h1>
+                            <h2 class="status-description radio-label"></h2>
+                        </div>
+                    </div>
+                    <div class="icons icons2"> 
+                        <!-- <i class="material-icons status-icon tooltip-left" data-tippy-content="Radio settings">more_vert</i> -->
+                        <i class="material-icons status-icon tooltip-left radio-members" data-tippy-content="Open radio members">people_outline</i>
+                    </div>
+                </div>
+
+                <div class="info-div settings">
+                    <div class="settings-div tooltip-top settings-button" data-tippy-content="Open Settings">
+                        <i class="material-icons settings-icon">more_horiz</i>
+                        <h1 class="settings-text">Settings</h1>
+                    </div>
+                    <div class="settings-div tooltip-top join-radio-button" data-tippy-content="Join Radio Channel">
+                        <i class="material-icons settings-icon call-icon">call</i>
+                        <h1 class="settings-text call-text">Join Radio</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-container join-radio-tab" style="display:none;top:100%;">
+                <div class="info-div">
+                    <h1 class="status-label">Join Radio</h1>
+
+                    <div class="form__group" style="margin-top:35px">
+                        <input type="number" class="form__input" id="freq" placeholder="Frequency" required="" />
+                        <label for="freq" class="form__label" autocomplete="off">Frequency</label>
+                    </div>
+
+                    <button class="btn waves-effect waves-light radio-join-freq-btn" type="submit" name="action" style="border-radius: 6px;">
+                        Join Frequency
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                    <!-- <div class="radio-stations">
+                        <div class="radio-station first">
+                            <h1 class="radio-station-name">Police Radio</h1>
+                            <h2 class="radio-station-frequency">Frequency: 911</h2>
+                        </div>
+                        <div class="radio-station">
+                            <h1 class="radio-station-name">Police & Ambulance Radio</h1>
+                            <h2 class="radio-station-frequency">Frequency: 911</h2>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="item-container settings-tab" style="display:none;top:100%;">
+                <div class="info-div settings">
+                    <h1 class="status-label" style="font-size:22px;margin-bottom: 0px;padding-bottom: 5px;text-align: center;">Settings</h1>
+                    <hr style="margin-bottom:15px;">
+                    <div class="switch">
+                        <label>
+                          Dark mode
+                          <input type="checkbox" class="theme-checkbox">
+                          <span class="lever"></span>
+                        </label>
+                    </div>
+                    <div class="switch">
+                        <label>
+                          Anonymous
+                          <input type="checkbox" class="anonymous-checkbox">
+                          <span class="lever"></span>
+                        </label>
+                    </div>
+                    <div class="switch">
+                        <label>
+                          Allow Drag
+                          <input type="checkbox" class="drag-checkbox">
+                          <span class="lever"></span>
+                        </label>
+                    </div>
+                    <details class="custom-select">
+                        <summary class="radios">
+                            <!-- <input type="radio" name="item" title="Size: 100%" checked> -->
+                            <input type="radio" name="item" class="size12" id="item-2" title="Size: 120%">
+                            <input type="radio" name="item" class="size11" id="item-1" title="Size: 110%">
+                            <input type="radio" name="item" class="size1" id="item1" title="Size: 100%">
+                            <input type="radio" name="item" class="size09" id="item2" title="Size: 90%">
+                            <input type="radio" name="item" class="size08" id="item3" title="Size: 80%">
+                            <input type="radio" name="item" class="size07" id="item4" title="Size: 70%">
+                            <input type="radio" name="item" class="size06" id="item5" title="Size: 60%">
+                            <input type="radio" name="item" class="size05" id="item6" title="Size: 50%">
+                        </summary>
+                        <ul class="list dropdown">
+                            <li>
+                                <label for="item-2" id="1.2">120%</label>
+                            </li>
+                            <li>
+                                <label for="item-1" id="1.1">110%</label>
+                            </li>
+                            <li>
+                                <label for="item1" id="1">100%</label>
+                            </li>
+                            <li>
+                                <label for="item2" id="0.9">90%</label>
+                            </li>
+                            <li>
+                                <label for="item3" id="0.8">80%</label>
+                            </li>
+                            <li>
+                                <label for="item4" id="0.7">70%</label>
+                            </li>
+                            <li>
+                                <label for="item5" id="0.6">60%</label>
+                            </li>
+                            <li>
+                                <label for="item6" id="0.5">50%</label>
+                            </li>
+                        </ul>
+                    </details>
+                    <!-- <div class="switch">
+                        <label>
+                          Silent Mode
+                          <input type="checkbox">
+                          <span class="lever"></span>
+                        </label>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="item-container radio-members-tab" style="display:none;top:100%;">
+                <div class="info-div">
+                    <h1 class="status-label" style="font-size:22px;margin-bottom: 0px;padding-bottom: 5px;text-align: center;">Radio Members</h1>
+                    <hr>
+                    <div class="radio-members-container">
+                        <!-- <div class="radio-member">
+                            <h1 class="radio-member-header">Peter Johnsson</h1>
+                        </div>
+                        <div class="radio-member">
+                            <h1 class="radio-member-header">Peter Johnsson 2</h1>
+                        </div> -->
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+        <a class="radio-home-button tooltip-bottom" data-tippy-content="Go back"></a>
+        <a class="radio-volume-up-button tooltip-left" data-tippy-content="Volume Up"></a>
+        <a class="radio-volume-down-button tooltip-right" data-tippy-content="Volume Down"></a>
+        <a class="radio-power-button tooltip-left" data-tippy-content="Turn on / off"></a>
+    </div>
+
+    <audio id="audio_on" src="sounds/on.ogg"></audio>
+    <audio id="audio_off" src="sounds/off.ogg"></audio>
+    <audio id="click" src="sounds/click.ogg"></audio>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./libs/materialize/script.js"></script>
+    <script src="./libs/sweetalert2/script.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="script.js"></script>
+</body>
+</html>
