@@ -1,0 +1,25 @@
+#main {
+    padding: 5vh 2.5vw;
+    width: 100vw;
+    text-align: center;
+}
+
+#about {
+    padding: 5vh 2.5vw;
+    width: 100vw;
+    text-align: center;
+}
+
+#status {
+    padding: 5vh 2.5vw;
+    width: 100vw;
+}
+
+#gallery {
+    padding: 5vh 2.5vw;
+    width: 100vw;
+}
+
+#link {
+    text-decoration: none;
+}
