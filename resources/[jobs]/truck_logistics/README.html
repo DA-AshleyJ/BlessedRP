@@ -1,0 +1,580 @@
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! THIS FILE MUST BE OPENED ON YOUR WEB BROWSER !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!! JUST DOUBLE CLICK ON IT OR OPEN WITH CHROME  !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+<html lang="en" class="">
+	<head>
+		<meta charset="UTF-8">
+		<title>README: Trucker</title>
+		<meta name="robots" content="noindex">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round&amp;display=swap">
+		<style class="INLINE_PEN_STYLESHEET_ID">
+			@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
+			
+			*,
+			*:after,
+			*:before {
+				box-sizing: border-box;
+			}
+
+			body {
+				background: #e8ebf3;
+				font: 400 16px 'Varela Round', sans-serif;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#checklist {
+				--background: #fff;
+				--text: #414856;
+				--check: #414856;
+				--disabled: #c3c8de;
+				--border-radius: 10px;
+				background: var(--background);
+				border-radius: var(--border-radius);
+				box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+				padding: 30px 45px;
+				width: 80%;
+				min-width: 700px;
+			}
+
+			.checklist-items {
+				display: grid;
+				grid-template-columns: 30px auto;
+				align-items: center;
+				justify-items: start;
+			}
+
+			.subtitle {
+				margin-block-end: .3em;
+			}
+			.subtitle-first {
+				margin-block-start: .3em;
+			}
+
+			#checklist .list-item {
+				color: var(--text);
+				position: relative;
+				display: grid;
+				align-items: center;
+				transition: color 0.3s ease;
+			}
+
+			#checklist .hover {
+				cursor: pointer;
+			}
+
+			#checklist .list-item::before,
+			#checklist .list-item::after {
+				content: "";
+				position: absolute;
+			}
+
+			#checklist .list-item::before {
+				height: 2px;
+				width: 8px;
+				left: -27px;
+				background: var(--check);
+				border-radius: 2px;
+				transition: background 0.3s ease;
+			}
+
+			#checklist .list-item:after {
+				height: 4px;
+				width: 4px;
+				top: 8px;
+				left: -25px;
+				border-radius: 50%;
+			}
+
+			#checklist input[type="checkbox"] {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				position: relative;
+				height: 15px;
+				width: 15px;
+				outline: none;
+				border: 0;
+				margin: 0 15px 0 0;
+				cursor: pointer;
+				display: grid;
+				align-items: center;
+			}
+
+			#checklist input[type="checkbox"]::before,
+			#checklist input[type="checkbox"]::after {
+				content: "";
+				position: absolute;
+				height: 2px;
+				top: auto;
+				background: var(--check);
+				border-radius: 2px;
+			}
+
+			#checklist input[type="checkbox"]::before {
+				width: 0px;
+				right: 60%;
+				transform-origin: right bottom;
+			}
+
+			#checklist input[type="checkbox"]::after {
+				width: 0px;
+				left: 40%;
+				transform-origin: left bottom;
+			}
+
+			#checklist input[type="checkbox"]:checked::before {
+				-webkit-animation: check-01 0.4s ease forwards;
+				animation: check-01 0.4s ease forwards;
+			}
+
+			#checklist input[type="checkbox"]:checked::after {
+				-webkit-animation: check-02 0.4s ease forwards;
+				animation: check-02 0.4s ease forwards;
+			}
+
+			#checklist input[type="checkbox"]:checked+.list-item {
+				color: var(--disabled);
+			}
+
+			#checklist input[type="checkbox"]:checked+.list-item::before {
+				background: var(--disabled);
+				-webkit-animation: slice 0.4s ease forwards;
+				animation: slice 0.4s ease forwards;
+			}
+
+			#checklist input[type="checkbox"]:checked+.list-item::after {
+				-webkit-animation: firework 0.5s ease forwards 0.1s;
+				animation: firework 0.5s ease forwards 0.1s;
+			}
+
+			@-webkit-keyframes slice {
+				60% {
+					width: 100%;
+					left: 4px;
+				}
+				100% {
+					width: 100%;
+					left: -2px;
+					padding-left: 0;
+				}
+			}
+
+			@keyframes slice {
+				60% {
+					width: 100%;
+					left: 4px;
+				}
+				100% {
+					width: 100%;
+					left: -2px;
+					padding-left: 0;
+				}
+			}
+
+			@-webkit-keyframes check-01 {
+				0% {
+					width: 4px;
+					top: auto;
+					transform: rotate(0);
+				}
+				50% {
+					width: 0px;
+					top: auto;
+					transform: rotate(0);
+				}
+				51% {
+					width: 0px;
+					top: 8px;
+					transform: rotate(45deg);
+				}
+				100% {
+					width: 5px;
+					top: 8px;
+					transform: rotate(45deg);
+				}
+			}
+
+			@keyframes check-01 {
+				0% {
+					width: 4px;
+					top: auto;
+					transform: rotate(0);
+				}
+				50% {
+					width: 0px;
+					top: auto;
+					transform: rotate(0);
+				}
+				51% {
+					width: 0px;
+					top: 8px;
+					transform: rotate(45deg);
+				}
+				100% {
+					width: 5px;
+					top: 8px;
+					transform: rotate(45deg);
+				}
+			}
+
+			@-webkit-keyframes check-02 {
+				0% {
+					width: 4px;
+					top: auto;
+					transform: rotate(0);
+				}
+				50% {
+					width: 0px;
+					top: auto;
+					transform: rotate(0);
+				}
+				51% {
+					width: 0px;
+					top: 8px;
+					transform: rotate(-45deg);
+				}
+				100% {
+					width: 10px;
+					top: 8px;
+					transform: rotate(-45deg);
+				}
+			}
+
+			@keyframes check-02 {
+				0% {
+					width: 4px;
+					top: auto;
+					transform: rotate(0);
+				}
+				50% {
+					width: 0px;
+					top: auto;
+					transform: rotate(0);
+				}
+				51% {
+					width: 0px;
+					top: 8px;
+					transform: rotate(-45deg);
+				}
+				100% {
+					width: 10px;
+					top: 8px;
+					transform: rotate(-45deg);
+				}
+			}
+
+			@-webkit-keyframes firework {
+				0% {
+					opacity: 1;
+					box-shadow: 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0;
+				}
+				30% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+					box-shadow: 0 -15px 0 0px #4f29f0, 14px -8px 0 0px #4f29f0, 14px 8px 0 0px #4f29f0, 0 15px 0 0px #4f29f0, -14px 8px 0 0px #4f29f0, -14px -8px 0 0px #4f29f0;
+				}
+			}
+
+			@keyframes firework {
+				0% {
+					opacity: 1;
+					box-shadow: 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0;
+				}
+				30% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+					box-shadow: 0 -15px 0 0px #4f29f0, 14px -8px 0 0px #4f29f0, 14px 8px 0 0px #4f29f0, 0 15px 0 0px #4f29f0, -14px 8px 0 0px #4f29f0, -14px -8px 0 0px #4f29f0;
+				}
+			}
+
+			.message {
+				background: #eee;
+				box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.31);
+				border-radius: 1em;
+				overflow: hidden;
+				display: flex;
+				flex-wrap: wrap;
+				max-width: 40em;
+				margin: 2em auto;
+			}
+
+			.message header {
+				background: #9E9E9E;
+				width: 100%;
+				padding: 0.5em;
+			}
+
+			.message i:after {
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				font-style: normal;
+				padding: 1em 0.75em;
+				font-size: 1.25em;
+				width: 2.5em;
+				height: 100%;
+
+				display: flex;
+    			align-items: center;
+			}
+
+			.warning i:after {
+				background: #FF6F00;
+    			color: #ffffff;
+				content: "";
+			}
+
+			.warning h2 .checkbox-title {
+				color: #FF6F00;
+				font-weight: 900;
+			}
+
+			.neutral i:after {
+				background: #0074d9;
+				color: #ffffff;
+				content: "";
+			}
+			.neutral h2 .checkbox-title {
+				color: #0074d9;
+				font-weight: 900;
+			}
+			
+			.success i:after {
+				background: #253226;
+				color: #7bcb7e;
+				content: "";
+			}
+			.success h2 .checkbox-title {
+				color: #388E3C;
+				font-weight: 900;
+			}
+
+			.message h2 {
+				margin: 0.75em;
+				font-size: 16px;
+				position: relative;
+				display: block;
+				width: calc(100% - 2.5em - 2.5em);
+				font-weight: 100;
+			}
+
+			body {
+				margin-bottom: 15vh;
+			}
+			.title {
+				margin-top: 10vh;
+			}
+			h2, h4 {
+				color: #2b2d30;
+				cursor: default;
+			}
+		</style>
+	</head>
+	<body>
+		<h2 class="title">How to install the script</h2>
+		<div id="checklist">
+			<div class="checklist-items">
+				<input id="01" type="checkbox">
+				<label class="list-item hover" for="01">Put it on resources folder and start it on server.cfg (ensure truck_logistics)</label>
+			</div>
+			<h4 class="subtitle">Truck Mods:</h4>
+			<div class="checklist-items">
+				<input id="03" type="checkbox">
+				<label class="list-item hover" for="03">Download the truck mods from this folder: <a href="https://drive.google.com/file/d/1ZDtedBTr5OqU-34_hY4Ly523goWcdCiK/view?usp=sharing" target="_blank">https://drive.google.com/file/d/1ZDtedBTr5OqU-34_hY4Ly523goWcdCiK/view?usp=sharing</a></label>
+				<input id="04" type="checkbox">
+				<label class="list-item hover" for="04">Extract it in your resources folder and start on server.cfg (ensure trailers; ensure trucks)</label>
+			</div>
+			<div class="checklist-items">
+				<input id="05" type="checkbox">
+				<label class="list-item hover" for="05"><span>Now everything is done. Join your server, find the trucker location (there is a blip on the map) then press E on the blip to open UI</span></label>
+			</div>
+			<section class="message neutral">
+				<i></i>
+				<h2>
+					<div class="checklist-items">
+						
+						<input type="checkbox" disabled>
+						<span class="checkbox-title">NO SQL FILE</span>
+						<input type="checkbox" disabled>
+						<label class="list-item">The script dont need sql, it creates everything automatically</label>
+						<input type="checkbox" disabled>
+						<label class="list-item"><span>The tables on your database will have the prefix <b>trucker_</b></span></label>
+						
+					</div>
+				</h2>
+			</section>
+		</div>
+
+		<h2 class="title">How to get support</h2>
+		<div id="checklist">
+			<section style="margin-top: 0.3em;" class="message warning">
+				<i></i>
+				<h2>
+					<div class="checklist-items">
+						<input type="checkbox" disabled>
+						<label class="list-item">Before asking support please read the Common Issues and FAQ right below on this file, your issue could be there</label>
+						
+					</div>
+				</h2>
+			</section>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">My support is done in my DMs, so feel free to DM me at any time if you need any help. (My DMs are open, so if you cannot send me a DM, just send me a Friend Request)</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">My support has no fixed schedule. I'm from Brazil, so if I take too long to answer you, I may be asleep or working. Please be patient</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">Only who bought the script and has access to Customer Dashboard can have support, if you have to change account or have your dev to talk with me, please tell me first</label>
+				<input type="checkbox" disabled>
+				<label class="list-item"><span>Discord Link: <a href="https://discord.gg/U5YDgbh" target="_blank"><b>https://discord.gg/U5YDgbh</b></a></span></label>
+				<input type="checkbox" disabled>
+				<label class="list-item"><span>My Discord tag: <b>Lixeiro Charmoso#1104</b></span></label>
+			</div>
+		</div>
+
+		<h2 class="title">Common Issues and FAQ</h2>
+		<div id="checklist">
+
+			<section style="margin-top: 0.3em;" class="message neutral">
+				<i></i>
+				<h2>
+					<div class="checklist-items">
+						<input type="checkbox" disabled>
+						<span class="checkbox-title">READ THE CONFIG!</span>
+						<input type="checkbox" disabled>
+						<label class="list-item">The script has a HUGE config file with many descriptions there, so take a time to read the configs available there carefully</label>
+						<input type="checkbox" disabled>
+						<label class="list-item">On config you can easily find any value, item, job, anything you need to configure is in config file</label>
+						<input type="checkbox" disabled>
+						<label class="list-item"><span>Check the <b>utils.lua</b> and <b>server_utils.lua</b> files too, there are some additional customizations there</span></label>
+					</div>
+				</h2>
+			</section>
+
+			<h4 class="subtitle subtitle-first">The UI is not opening when I press E at it</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">The most probably solution is the script is not authenticated on your server IP, restart the script and check if the script is autenticated in server console (not F8)</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">If it is still not working check if you dont have any error in F8 or server console. If yes, try to do a fresh install of the script. Just redownload the original version and empty all trucker tables from your database</label>
+			</div>
+			<h4 class="subtitle">It says "You dont have the required job to open this menu" when i try to open the menu</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">Well, its a bit intuitive, you dont have the job. You can disable the job requirement on config if you want</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">You can change the job there too, pay attention, the job there is the job NAME, not job LABEL</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">If you have configured the job and it still not works, you probably put the job label</label>
+			</div>
+			<h4 class="subtitle">I cannot click on anything on the UI or the UI is not closing</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">You cannot rename the script, use the default name</label>
+			</div>
+			<h4 class="subtitle">I cannot start any job or my truck is not spawning</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">Normally this happens when you doesn't have correctly installed the truck mods, so the script cannot spawn them. Try to spawn the vehicles using admin menu to check if the mods are installed</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">You can check if you have any anticheat or blacklist blocking the vehicles to spawn</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">Check if your server does not have any incompatibility with the vehicle plate (you can find the plate in the lang files)</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">Check if you have enough skill points to start that job, at first you can only start jobs that does not require any exp and at max 6km</label>
+			</div>
+			<h4 class="subtitle">I need to hotwire/lockpick the trucks</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">You can customize the SpawnVehicle function on the utils.lua, so add your key system there</label>
+			</div>
+			<h4 class="subtitle">My truck has no fuel</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">By default, the trucks are spawned with 100% fuel, if this value is lower you probably has another script changing that</label>
+			</div>
+			<h4 class="subtitle">Some trailers are 'bouncing'</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">For some unknown reason, some trailers can randomly bounce. You can just find those trailers on config and remove from there</label>
+			</div>
+			<h4 class="subtitle">I changed a job price on config and it did not changed on the interface</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">Each job data are saved on database, so every change you do will only take effect for the next generated contracts, not the actual ones. You can clear the trucker_available_contracts table on your database to remove the contracts using the old config</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">The same is for drivers</label>
+			</div>
+			<h4 class="subtitle">I cannot park the vehicle to finish the job</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">Check if you are using the right truck and trailer (they will have a blue blip on your minimap), if one does not have blip you'll not be able to park the truck</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">Check if you are heading your truck to the right way, the trailer/truck must be parked exaclty in the parking spot and heading to the right direction</label>
+				<input type="checkbox" disabled>
+				<label class="list-item">If everything is ok and it is just a impossible spot to park, you can just remove this location from config (please send me it on Discord so i can fix for the others customers)</label>
+			</div>
+			<h4 class="subtitle">How to earn skill points?</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">Experience points are earned by completing jobs. By default you need 1000EXP to level up, each level up you'll earn 1 skill point, that can be spent on the skills page</label>
+			</div>
+			<h4 class="subtitle">How do drivers work?</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">The drivers works passively, you just have to set a truck to him and the driver will generate money to you over time (Default: 120 min). On the config you can configure all the times and money earned</label>
+			</div>
+			<h4 class="subtitle">My drivers disappeared</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">The drivers will only dissapear when you dont have enought money in the trucker bank to pay them, so keep some money there or they will be fired</label>
+			</div>
+			<h4 class="subtitle">How to change the notification?</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">On utils.lua file you can find the notification system of the script, just remove the actual notification and add yours</label>
+			</div>
+			<h4 class="subtitle">How to customize the UI?</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item">The UI code is not encrypted, so you can easily go to HTML, JS and CSS to edit anything you want there. But to do this it is necessary that you have some programming knowledge.</label>
+			</div>
+			<h4 class="subtitle">I did not find the solution of my questions/issues here</h4>
+			<div class="checklist-items">
+				<input type="checkbox" disabled>
+				<label class="list-item"><span>Feel free to DM me at any time if you need any help, i'll be more than happy to assist you: <b>Lixeiro Charmoso#1104</b></span></label>
+			</div>
+		</div>
+	</body>
+</html>
