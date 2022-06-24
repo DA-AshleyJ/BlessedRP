@@ -1,0 +1,25 @@
+resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+this_is_a_map 'yes'
+
+files {
+	'bs_timecycmod.xml'
+}
+
+data_file 'TIMECYCLEMOD_FILE' 'bs_timecycmod.xml'
+data_file 'SCALEFORM_DLC_FILE' 'stream/int1756029552.gfx'
+data_file 'DLC_ITYP_REQUEST' 'stream/CustomProps.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/cyber_props.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/def_props.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/def_props2.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/hoosier.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_int_46.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/bendpak_lift.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/imp_prop_impexp_car_parts.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/imp_prop_impexp_carlifts.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/imp_prop_impexp_garage_equipment.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_minigame.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/lr_supermod_garage_int.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/nutt_mosleys.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_bins.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/v_airport.ytyp'
+data_file 'DLC_ITYP_REQUEST' 'stream/bendpak_lift.ytyp'
