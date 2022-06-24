@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ShopVehicleDataArray>
+	<Vehicles>
+
+		<Item>
+			<lockHash>CU_VEH_zondar</lockHash>
+			<modelNameHash>zondar</modelNameHash>
+			<cost value="100"/>
+			<textLabel>zondar</textLabel>
+			<vehicleMods></vehicleMods>
+		</Item>
+
+
+	</Vehicles>	
+</ShopVehicleDataArray>
