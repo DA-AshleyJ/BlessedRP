@@ -1,3 +1,0 @@
-[submodule "http/dui"]
-	path = http/dui
-	url = https://github.com/kibook/pmms-dui

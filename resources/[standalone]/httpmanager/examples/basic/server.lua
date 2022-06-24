@@ -1,1 +1,0 @@
-SetHttpHandler(exports.httpmanager:createHttpHandler())
