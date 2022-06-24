@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+     <Item>
+      <modelName>tbird64</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array"> <!-- Raven Black -->
+            0
+            0
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Wimbledon White -->
+            111
+            111
+            0
+            111
+          </indices>
+        </Item>
+         <Item>
+          <indices content="char_array"> <!-- Chantilly Beige Metallic -->
+            99
+            99
+            4
+            106
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Samoan Coral -->
+            216
+            216
+            216
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Vintage Burgundy Metallic -->
+            167
+            167
+            3
+            27
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Rangoon Red -->
+            27
+            27
+            0
+            27
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Rose Beige Metallic -->
+            205
+            205
+            5
+            205
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Florentine Green -->
+            179
+            179
+            0
+            106
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Patrician Green Metallic -->
+            194
+            194
+            5
+            68
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Caspian Blue Metallic -->
+            62
+            62
+            4
+            68
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Navajo Beige -->
+            106
+            106
+            0
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Prairie Tan -->
+            189
+            189
+            0
+            99
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cascade Green Metallic -->
+            50
+            50
+            4
+            99
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Arcadian Blue -->
+            67
+            67
+            0
+            68
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Phoenician Yellow -->
+            169
+            169
+            0
+            205
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Silver Mink Metallic -->
+            4
+            4
+            111
+            27
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Brittany Blue Metallic -->
+            74
+            74
+            4
+            161
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Princeton Gray Metallic -->
+            10
+            10
+            4
+            37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Pagoda Green -->
+            199
+            199
+            0
+            68
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Diamond Blue -->
+            67
+            67
+            0
+            161
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Blue Plate</Name>
+            <Value value="50" />
+          </Item>
+          <Item>
+            <Name>Yellow Plate</Name>
+            <Value value="50" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="501" />
+      <sirenSettings value="0" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>

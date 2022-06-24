@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+     <Item>
+      <modelName>onefifty55</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array"> <!-- Black -->
+            0
+            0 
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Seamist Green -->
+            174
+            174
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Coral -->
+            163
+            163
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Skyline Blue -->
+            180
+            180
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Harvest Gold -->
+            162
+            162
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Copper Maroon Poly -->
+            167
+            167
+            5
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Neptune Green Poly -->
+            54
+            54
+            54
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Autumn Bronze Poly -->
+            97
+            97
+            5
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Glacier Blue Poly -->
+            181
+            181
+            4
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Gypsy Red -->
+            28
+            28
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- India Ivory -->
+            111
+            111
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Regal Turquoise Poly -->
+            161
+            161
+            5
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cashmere Blue -->
+            127
+            127
+            0
+            2
+          </indices>
+        </Item>
+<!--        <Item>
+          <indices content="char_array"> <!-- Navajo Tan Poly -- TWO TONES
+            98
+            98
+            5
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Dusk Rose Poly --
+            34
+            34
+            5
+            2
+          </indices>
+        </Item> -->
+        <Item>
+          <indices content="char_array"> <!-- Shoreline Beige -->
+            107
+            107
+            0
+            2
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Shadow Gray Poly -->
+            9
+            9
+            5
+            2
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Yellow Plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="2" />
+      <sirenSettings value="0" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>

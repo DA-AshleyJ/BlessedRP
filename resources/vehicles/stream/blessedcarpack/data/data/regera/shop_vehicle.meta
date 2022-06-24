@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ShopVehicleDataArray>
+	<Vehicles>
+		<Item>
+			<lockHash>CU_REGERA16_VEH</lockHash>
+			<modelNameHash>regera16</modelNameHash>
+			<cost value="100"/>
+			<textLabel>REGERA16</textLabel>
+			<vehicleMods></vehicleMods>
+		</Item>
+	</Vehicles>
+</ShopVehicleDataArray>
