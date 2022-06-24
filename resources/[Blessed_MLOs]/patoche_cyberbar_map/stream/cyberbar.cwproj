@@ -1,0 +1,19 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>hei_dt1_16_strm_0.ymap</Item>
+    <Item>patoche_cyber_logo2_pose.ymap</Item>
+    <Item>patoche_cyber_milo_.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames>
+    <Item>patoche_cyber.ytyp</Item>
+    <Item>[props]\patoche_cyber_list.ytyp</Item>
+  </YtypFilenames>
+  <YbnFilenames />
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+</CodeWalkerProject>

@@ -1,0 +1,17 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>novelax_ambu_milo_.ymap</Item>
+    <Item>hei_vb_20_strm_0.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames>
+    <Item>novelax_ambu.ytyp</Item>
+  </YtypFilenames>
+  <YbnFilenames />
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+</CodeWalkerProject>
