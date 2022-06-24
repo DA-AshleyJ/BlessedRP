@@ -1,0 +1,19 @@
+Selamat datang di pengantar singkat ChocoHax
+Diperbarui pada: 10/02/2022
+
+1. Setelah mengunduh arsip ZIP, buat folder baru di folder `resources`, Anda dapat memberi nama sesuka Anda, JANGAN menggunakan angka atau karakter khusus
+2. Ekstrak semua file ke folder yang baru dibuat
+3. Buat file config.json dari panel tempat Anda mengunduh pembaruan
+4. Pindahkan / Salin file config.json di folder ChocoHax (di mana file fxmanifest.lua juga ada)
+5. Mulai server dan ChocoHax
+
+Segera setelah Anda memulai server, file config.json dan file permissions.json akan dimuat
+
+Jika Anda perlu mengonfigurasi ChocoHax, lakukan dengan menggunakan panel khusus atau dengan mengedit file config.json secara manual
+JANGAN sentuh file di dalam folder `internal`, ini dapat merusak fungsi anticheat yang benar
+
+Anda dapat menggunakan perintah `lynx` dan` lynx help` untuk mendapatkan informasi lebih lanjut tentang perintah yang tersedia
+
+Untuk mengatur izin, lihat panduan online yang diperbarui di tautan: https://forum.lynxcollective.ltd/knowledge-base/
+
+Untuk masalah atau bug: https://forum.lynxcollective.ltd/forums/support.12/ atau dengan menghubungi dukungan kami

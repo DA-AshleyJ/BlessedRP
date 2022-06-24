@@ -1,0 +1,19 @@
+Bienvenue dans la courte introduction à ChocoHax
+Mis à jour le : 10/02/2022
+
+1. Après avoir téléchargé l'archive ZIP, créez un nouveau dossier dans le dossier "ressources", vous pouvez le nommer comme vous le souhaitez, N'UTILISEZ PAS de chiffres ou de caractères spéciaux
+2. Extrayez tous les fichiers dans le dossier nouvellement créé
+3. Créez un fichier config.json à partir du panneau où vous avez téléchargé la mise à jour
+4. Déplacez / Copiez le fichier config.json dans le dossier ChocoHax (où le fichier fxmanifest.lua est également présent)
+5. Démarrez le serveur et ChocoHax
+
+Dès que vous aurez démarré le serveur, le fichier config.json et le fichier permissions.json seront chargés
+
+Si vous avez besoin de configurer ChocoHax, faites-le en utilisant le panneau dédié ou en éditant manuellement le fichier config.json
+NE PAS toucher les fichiers à l'intérieur du dossier "interne", cela pourrait corrompre le bon fonctionnement de l'anticheat
+
+Vous pouvez utiliser les commandes `lynx` et` lynx help` pour obtenir plus d'informations sur les commandes disponibles
+
+Pour définir les autorisations, consultez le guide en ligne mis à jour sur le lien : https://forum.lynxcollective.ltd/knowledge-base/
+
+Pour les problèmes ou bugs : https://forum.lynxcollective.ltd/forums/support.12/ ou en contactant notre support
