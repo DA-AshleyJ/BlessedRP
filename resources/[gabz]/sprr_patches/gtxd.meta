@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CMapParentTxds>
+  <txdRelationships>
+    <Item>
+      <parent>1_dt1_rd1_1_update</parent>
+      <child>dt1_rd1_1_update</child>
+    </Item>
+    <Item>
+      <parent>2_dt1_rd1_1_update</parent>
+      <child>1_dt1_rd1_1_update</child>
+    </Item>
+    <Item>
+      <parent>3_dt1_rd1_1_update</parent>
+      <child>2_dt1_rd1_1_update</child>
+    </Item>
+    <Item>
+      <parent>4_dt1_rd1_1_update</parent>
+      <child>3_dt1_rd1_1_update</child>
+    </Item>
+    <Item>
+      <parent>5_dt1_rd1_1_update</parent>
+      <child>4_dt1_rd1_1_update</child>
+    </Item>
+    <Item>
+      <parent>6_dt1_rd1_1_update</parent>
+      <child>5_dt1_rd1_1_update</child>
+    </Item>
+  </txdRelationships>
+</CMapParentTxds>
