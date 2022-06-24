@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+     <Item>
+      <modelName>impala58</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array"> <!-- Onyx Black / Arctic White -->
+            0
+            111 
+            0
+            5
+			0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Glen Green / Arctic White -->
+            245
+            111
+            0
+            5
+			54
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Forest Green / Glen Green -->
+            54
+            245
+            3
+            5
+			54
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Colonial Cream / Arctic White -->
+            169
+            111
+            0
+            5
+			54
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cashmere Blue / Arctic White -->
+            157
+            111
+            0
+            5
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Fathom Blue / Cashmere Blue -->
+            225
+            157
+            74
+            0
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Silver Blue / Snowcrest White -->
+            246
+            111
+            5
+            5
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Aegean Turquoise / Arctic White -->
+            234
+            111
+            3
+			5
+            234
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Aegean Turquoise / Tropic Turquoise -->
+            234
+            199
+            3
+			5
+            234
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Tropic Turquoise / Arctic White -->
+            199
+            111
+            3
+			5
+            234
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Snowcrest White -->
+            111
+            111
+            0
+			5
+            234
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Honey Beige / Anniversary Gold -->
+            107
+            37
+            98
+            5
+			37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Sierra Gold / Arctic White -->
+            247
+            111
+            99
+            5
+			37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Rio Red / Arctic White -->
+            28
+            111
+            0
+            5
+			28
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Coy Coral / Arctic White -->
+            163
+            111
+            239
+            5
+			240
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Onyx Black -->
+            0
+            0
+            0
+            5
+			0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Forest Green -->
+            54
+            54
+            3
+            5
+			54
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Colonial Cream -->
+            169
+            169
+            0
+            5
+			54
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cashmere Blue -->
+            157
+            157
+            0
+            5
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Fathom Blue -->
+            225
+            225
+            74
+            0
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Silver Blue -->
+            246
+            246
+            5
+            5
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Tropic Turquoise -->
+            199
+            199
+            3
+			5
+            234
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Anniversary Gold -->
+            37
+            37
+            99
+            5
+			37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Sierra Gold -->
+            247
+            247
+            99
+            5
+			37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Coy Coral -->
+            163
+            163
+            239
+            5
+			240
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Yellow Plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="505" />
+      <sirenSettings value="0" />
+    </Item>
+     <Item>
+      <modelName>impala58c</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array"> <!-- Onyx Black -->
+            0
+            1
+            0
+            5
+			0
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Glen Green -->
+            245
+            111
+            0
+            5
+			54
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Forest Green -->
+            54
+            111
+            3
+            5
+			54
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Colonial Cream -->
+            169
+            1
+            0
+            5
+			54
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Cashmere Blue -->
+            157
+            111
+            0
+            5
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Fathom Blue -->
+            225
+            111
+            74
+            0
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Silver Blue -->
+            246
+            111
+            5
+            5
+			225
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Aegean Turquoise -->
+            234
+            111
+            3
+			5
+            234
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Tropic Turquoise -->
+            199
+            111
+            3
+			5
+            234
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Snowcrest White -->
+            111
+            1
+            0
+			5
+            28
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Honey Beige -->
+            107
+            107
+            99
+            5
+			37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Anniversary Gold -->
+            37
+            111
+            98
+            5
+			37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Sierra Gold -->
+            247
+            111
+            99
+            5
+			37
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Rio Red -->
+            28
+            111
+            0
+            5
+			28
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array"> <!-- Coy Coral -->
+            163
+            111
+            239
+            5
+			240
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>0_default_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Yellow Plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="505" />
+      <sirenSettings value="0" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CVehicleModelInfoVariation>
+	<variationData>
+	  <Item>
+		 <modelName>11cvpiv</modelName>
+		 <colors>
+			<Item>
+			   <indices content="char_array">
+				  134
+				  134
+				  134
+				  29
+				  53
+				  54
+			   </indices>
+			   <liveries />
+			</Item>
+		 </colors>
+		 <kits>
+			<Item>911111111_valorcvpi_modkit</Item>
+		 </kits>
+		 <windowsWithExposedEdges />
+		 <plateProbabilities>
+			<Probabilities>
+			   <Item>
+				  <Name>Police guv plate</Name>
+				  <Value value="100" />
+			   </Item>
+			</Probabilities>
+		 </plateProbabilities>
+		 <lightSettings value="2" />
+		 <sirenSettings value="6161539999" />
+	  </Item>
+	</variationData>
+</CVehicleModelInfoVariation>
