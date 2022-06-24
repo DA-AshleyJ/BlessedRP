@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+.container {
+    height: 100vh;
+}
+
+.tunertablet-block {
+    display: block;
+    position: absolute;
+    width: 57vh;
+    left: 14vh;
+    height: 37vh;
+    top: 20vh;
+    z-index: 100;
+}
+
+.screen-frame {
+    position: absolute;
+    left: 10vh;
+    top: 14.5vh;
+    margin: 0 auto;
+    pointer-events: none;
+    z-index: 101;
+    height: 45vh;
+}
+
+.tunertablet-header {
+    position: absolute;
+    width: 100%;
+    height: 7%;
+    background-color: rgb(255, 255, 255);
+}
+
+.tunertablet-software {
+    /* display: none; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    background-image: url('./bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 0;
+    z-index: 10000;
+}
+.tunertablet-btn {
+    position: relative;
+    background-color: #22658b;
+    height: 3vh;
+    margin-bottom: 2vh;
+    border-radius: 0.9vh;
+    transition: all 0.2s linear;
+}
+
+.tunertablet-btn:hover {
+    border-radius: 0.9vh;
+    background-color: #22658b;
+}
+
+.tunertablet-btn > p {
+    text-align: center;
+    color: white;
+    font-size: 1vh;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.1vh;
+    line-height: 3vh;
+}
+
+.tunertablet-software-buttons {
+    position: absolute;
+    height: 20vh;
+    width: 8vh;
+    right: 4vh;
+    top: 16vh;
+}
+
+.tunertablet-software-boost-slider {
+    position: absolute;
+    width: 30vh;
+    top: 6vh;
+    left: 4vh;
+}
+
+.tunertablet-software-acceleration-slider {
+    position: absolute;
+    width: 30vh;
+    top: 11vh;
+    left: 4vh;
+}
+
+.tunertablet-software-gear-slider {
+    position: absolute;
+    width: 30vh;
+    top: 16vh;
+    left: 4vh;
+}
+
+.tunertablet-software-breaking-slider {
+    position: absolute;
+    width: 30vh;
+    top: 21vh;
+    left: 4vh;
+}
+
+.tunertablet-software-drivetrain-slider {
+    position: absolute;
+    width: 30vh;
+    top: 26vh;
+    left: 4vh;
+}
+
+#slider-title {
+    font-family: 'Lato';
+    font-weight: bold;
+    color: white;
+    font-size: 1.5vh;
+    letter-spacing: 0.15vh;
+    padding-left: 0.2vh;
+    padding-bottom: 4vh;
+}
+
+#normalhigh {
+    font-size: 9px;
+    font-weight: lighter;
+    margin-left: 8px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 125%;
+    height: 1.5vh;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0);
+}
+  
+.slider:hover {
+    opacity: 1;
+}
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1vh;
+    height: 2vh;
+    background: rgb(44, 83, 119);
+    cursor: pointer;
+}
+  
+.slider::-moz-range-thumb {
+    width: 1vh;
+    height: 1vh;
+    background: rgb(44, 83, 119);
+    cursor: pointer;
+}
