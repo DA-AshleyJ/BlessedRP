@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<div class="UI-CONTAINER">
+    <div class="laptop">
+        <div class="screen">
+            <div id="header">
+                <div tab="engines" class="option active" perm="0">
+                    <div><h1>OVERVIEW</h1></div>
+                </div>
+                <div tab="stock" class="option" perm="1">
+                    <div><h1>STOCK</h1></div>
+                </div>
+                <div tab="store" class="option" perm="2">
+                    <div><h1>STORE</h1></div>
+                </div>
+                <div tab="video" class="option" perm="0">
+                    <div><h1>TUTORIAL</h1></div>
+                </div>
+            </div>
+            <div class="main img1"></div>
+            <div class="page" id="tab-engines">
+                <div class="engines">
+                    <h1>ENGINES</h1>
+                    <h1 class="echo">ENGINES</h1>
+                    <div class="engines-container" id="engines-container"></div>
+                </div>
+            </div>
+            <div class="page" id="tab-stock">
+                <div class="engines">
+                    <h1>STOCK</h1>
+                    <h1 class="echo">STOCK</h1>
+                    <div class="engines-container" id="stock-container"></div>
+                </div>
+            </div>
+            <div class="page" id="tab-store">
+                <div class="engines">
+                    <h1>STORE</h1>
+                    <h1 class="echo">STORE</h1>
+                    <div id="cart" class="cart">
+                        <h2 id="cart-item">Engine Name</h2>
+                        <p id="cart-info"></p>
+                        <div class="icon">
+                            <img id="cart-icon" src="">
+                        </div>
+                        <button class="button" id="confirm-order">CONFIRM PURCHASE</button>
+                    </div>
+                    <div id="purchased-modal" class="purchased-modal">
+                        <h2></h2>
+                        <button class="button" id="close-modal">OKAY</button>
+                    </div>
+                    <div class="engines-container" id="store-container"></div>
+                </div>
+            </div>
+            <div class="page" id="tab-video">
+                <div class="tutorial-video">
+                    <iframe id="tutorial-iframe" width="1024" height="576" src="" title="YouTube video player" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="page snake" id="tab-snake">
+                <div class="snake" id="snake"></div>
+            </div>
+        </div>
+    </div>
+    <div class="keyboard">
+        <div class="row">
+            <div class="key"><label>~</label></div>
+            <div class="key" key="1"><label>1</label></div>
+            <div class="key" key="2"><label>2</label></div>
+            <div class="key" key="3"><label>3</label></div>
+            <div class="key" key="4"><label>4</label></div>
+            <div class="key" key="5"><label>5</label></div>
+            <div class="key" key="6"><label>6</label></div>
+            <div class="key" key="7"><label>7</label></div>
+            <div class="key" key="8"><label>8</label></div>
+            <div class="key" key="9"><label>9</label></div>
+            <div class="key" key="0"><label>0</label></div>
+            <div class="key"><label>-</label></div>
+            <div class="key"><label>=</label></div>
+            <div class="key long" key="backspace"><label>Backspace</label></div>
+        </div>
+        <div class="row">
+            <div class="key medium" key="tab"><label>Tab</label></div>
+            <div class="key"><label>Q</label></div>
+            <div class="key"><label>W</label></div>
+            <div class="key"><label>E</label></div>
+            <div class="key"><label>R</label></div>
+            <div class="key"><label>T</label></div>
+            <div class="key"><label>Y</label></div>
+            <div class="key"><label>U</label></div>
+            <div class="key"><label>I</label></div>
+            <div class="key"><label>O</label></div>
+            <div class="key"><label>P</label></div>
+            <div class="key"><label>[</label></div>
+            <div class="key"><label>]</label></div>
+            <div class="key medium"><label>\</label></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        $(document).on('click', '.option', function () {
+            const tab = $(this).attr('tab');
+            setTab(tab);
+        });
+
+        let permissions = 0;
+
+        let weightUnit = 'kg';
+
+        let currentVeh = {};
+        let engines = [];
+
+        let stock = [];
+
+        let inCart = null;
+
+        let selected = null;
+        let canSelect = false;
+
+        let snakeEnabled = true;
+
+        window.addEventListener('message', (event) => {
+            if (event.data.event === 'show') {
+                toggleUI(event.data.state)
+            }
+            if (event.data.event === 'canSelect') {
+                canSelect = event.data.canSelect
+            }
+            if (event.data.event === 'setVehicle') {
+                currentVeh = {
+                    power: parseInt(event.data.power),
+                    speed: parseInt(event.data.speed),
+                    engineWeight: parseInt(event.data.engineWeight),
+                }
+                appendEngines();
+            }
+            if (event.data.event === 'removeVehicle') {
+                currentVeh = {
+                    power: null,
+                    speed: null,
+                    engineWeight: null,
+                }
+                appendEngines();
+            }
+            if (event.data.event === 'clearEngines') {
+                $('#engines-container').html('');
+                $('#store-container').html('');
+                engines = [];
+            }
+            if (event.data.event === 'clearStock') {
+                $('#stock-container').html('');
+                stock = [];
+            }
+            if (event.data.event === 'insertStock') {
+                stock.push({
+                    key: event.data.key,
+                    image: event.data.image,
+                    name: event.data.name,
+                    available_at: event.data.available_at,
+                    time: event.data.time,
+                })
+                appendStock();
+            }
+            if (event.data.event === 'insertEngine') {
+                engines.push({
+                    key: event.data.key,
+                    image: event.data.image,
+                    name: event.data.name,
+                    weight: parseInt(event.data.weight),
+                    power: parseInt(event.data.power),
+                    speed: parseInt(event.data.speed),
+                    willFit: event.data.willFit,
+                    price: parseInt(event.data.price),
+                    shipment: parseInt(event.data.shipment),
+                    inStock: event.data.inStock,
+                })
+                appendEngines();
+            }
+            if (event.data.event === 'orderPopup') {
+                $('#purchased-modal').fadeIn(100);
+                $('#purchased-modal h2').html(event.data.message);
+            }
+            if (event.data.event === 'setPermissions') {
+                permissions = event.data.permissions;
+
+                $('.option').each(function () {
+                    if ($(this).attr('perm') <= permissions) {
+                        $(this).show()
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+            if (event.data.event === 'setUnits') {
+                weightUnit = event.data.units;
+            }
+            if (event.data.event === 'disableSnake') {
+                snakeEnabled = false;
+            }
+        });
+
+        function appendStock() {
+            $('#stock-container').html('');
+
+            stock.forEach((stock) => {
+                let disabled = '';
+                let available = 'Available';
+                if (stock.available_at > stock.time) {
+                    disabled = 'disabled';
+                    available = 'Being shipped approx. ' + ((stock.available_at - stock.time) / 60).toFixed(0) + ' minutes remaining';
+                }
+
+                $('#stock-container').append('' +
+                    '<div class="engine-item ' + disabled + '">' +
+                    '    <div class="icon">' +
+                    '        <img src="img/engines/' + stock.image + '">' +
+                    '    </div>' +
+                    '    <div class="info">' +
+                    '        <label class="name">' + stock.name + '</label><br>' +
+                    '        <label class="detail">' + available + '</label><br>' +
+                    '    </div>' +
+                    '</div>')
+            })
+        }
+
+        function appendEngines() {
+            $('#engines-container').html('');
+            $('#store-container').html('');
+            engines.forEach((engine, key) => {
+
+                let weightText = '';
+                if (currentVeh.engineWeight) {
+                    const weight = currentVeh.engineWeight - engine.weight;
+                    if (weight < 0) {
+                        weightText = '<label class="worse">▲' + Math.abs(weight) + weightUnit + '</label>';
+                    } else {
+                        weightText = '<label class="better">▼' + Math.abs(weight) + weightUnit + '</label>';
+                    }
+                }
+
+                let powerText = '';
+                if (currentVeh.power) {
+                    const power = currentVeh.power - engine.power;
+                    if (power < 0) {
+                        powerText = '<label class="better">▲' + Math.abs(power) + '</label>';
+                    } else {
+                        powerText = '<label class="worse">▼' + Math.abs(power) + '</label>';
+                    }
+                }
+
+                let speedText = '';
+                if (currentVeh.speed) {
+                    const speed = currentVeh.speed - engine.speed;
+                    if (speed < 0) {
+                        speedText = '<label class="better">▲' + Math.abs(speed) + '</label>';
+                    } else {
+                        speedText = '<label class="worse">▼' + Math.abs(speed) + '</label>';
+                    }
+                }
+
+                let disabledMessage = '';
+                let disabled = '';
+
+                if (!engine.inStock && currentVeh.speed) {
+                    disabledMessage = '<span class="cant-use-span">(Out of stock)</span>';
+                    disabled = 'disabled';
+                }
+                if (!engine.willFit) {
+                    disabledMessage = '<span class="cant-use-span">(Too large)</span>';
+                    disabled = 'disabled';
+                }
+
+                $('#engines-container').append('' +
+                    '<div class="selectable engine-item ' + disabled + '" engine="' + engine.key + '">' +
+                    '    <div class="icon">' +
+                    '        <img src="img/engines/' + engine.image + '">' +
+                    '    </div>' +
+                    '    <div class="info">' +
+                    '        <label class="name">' + engine.name + '</label>' + disabledMessage +
+                    '        <label class="detail right">' + engine.weight + weightUnit + ' ' + weightText + '</label><br>' +
+                    '        <label class="detail">POWER RATING: ' + engine.power + ' ' + powerText + '</label><br>' +
+                    '        <label class="detail">SPEED RATING: ' + engine.speed + ' ' + speedText + '</label><br>' +
+                    '    </div>' +
+                    '</div>')
+
+
+                $('#store-container').append('' +
+                    '<div class="engine-item" engine="' + engine.key + '" engineIndex="' + key + '">' +
+                    '    <div class="icon">' +
+                    '        <img src="img/engines/' + engine.image + '">' +
+                    '    </div>' +
+                    '    <div class="info">' +
+                    '        <label class="name">' + engine.name + '</label>' +
+                    '        <label class="price">$' + numberWithCommas(engine.price) + '</label><br>' +
+                    '        <label class="detail">Estimated shipment duration: ' + engine.shipment + ' minutes</label><br>' +
+                    '    </div>' +
+                    '</div>')
+            })
+        }
+
+        $(document).on('click', '#engines-container .engine-item', function () {
+            if (canSelect && !$(this).hasClass('disabled')) {
+                const engine = $(this).attr('engine');
+                fetch(`https://kq_engineswaps/SelectEngine`, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        engine: engine,
+                    })
+                }).then(resp => resp.json()).then(resp => {
+                    if ((resp)) {
+                        $('#engines-container .engine-item').removeClass('selected');
+                        $(this).addClass('selected');
+                        selected = engine;
+                    }
+                })
+            }
+        });
+
+        $(document).on('click', '#store-container .engine-item', function () {
+            const engineKey = $(this).attr('engine');
+            const engineIndex = $(this).attr('engineIndex');
+            const engine = engines[engineIndex];
+            $('#store-container .engine-item').removeClass('selected');
+            $(this).addClass('selected');
+            inCart = engineKey;
+
+            $('#cart-item').html(engine.name);
+            $('#cart-icon').attr('src', "img/engines/" + engine.image);
+            $('#cart-info').html('PRICE: $' + numberWithCommas(engine.price) + '<br><br>' +
+                'POWER RATING: ' + engine.power + '<br>' +
+                'SPEED RATING: ' + engine.speed + '<br>' +
+                'WEIGHT: ' + engine.weight + weightUnit + '<br>' +
+                'SHIPMENT DURATION: ~' + engine.shipment + ' minutes');
+            $('#cart').show();
+        });
+
+        $(document).on('click', '#confirm-order', function () {
+            fetch(`https://kq_engineswaps/PurchaseEngine`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    engine: inCart,
+                })
+            });
+            $('#cart').hide();
+            $('#store-container .engine-item').removeClass('selected');
+        });
+
+        $(document).on('click', '#close-modal', function () {
+            $('#purchased-modal').fadeOut(100);
+        });
+
+        function setTab(tab) {
+            $(".option").each(function () {
+                $(this).removeClass("active");
+                if ($(this).attr("tab") == tab) {
+                    $(this).addClass("active");
+                }
+            });
+            $('.page').hide();
+            $('#tab-' + tab).show();
+
+            if (tab === 'video') {
+                $('#tutorial-iframe').attr('src', 'https://www.youtube.com/embed/VPyiFxQEr8o');
+            }
+        }
+
+        function toggleUI(state) {
+            if (state) {
+                $(".UI-CONTAINER").css('display', 'flex');
+                $("body").animate({
+                    marginTop: "0vh"
+                }, 500);
+            } else {
+                $("body").animate({
+                    marginTop: "100vh"
+                }, 500, function () {
+                    $(".UI-CONTAINER").hide();
+                });
+                $('#tutorial-iframe').attr('src', '');
+                setTab('engines');
+            }
+        }
+
+        $("body").animate({
+            marginTop: "100vh"
+        }, 500);
+
+        document.addEventListener('keyup', logKey);
+
+        function logKey(e) {
+            if (e.key === 'Escape' || e.key === 'Backspace' || e.key === 'e' || e.key === 'E' || e.key === ' ') {
+                fetch(`https://kq_engineswaps/CloseMenu`, {
+                    method: 'POST',
+                })
+            }
+        }
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        setTab('engines');
+
+        fetch(`https://kq_engineswaps/NUILoaded`, {
+            method: 'POST',
+        })
+
+        let backspacePresses = 0;
+        let snakeLoaded = false;
+        $(document).on('click', '.key', function(){
+            window.addEventListener("keydown", function(e) {
+                if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+                    e.preventDefault();
+                }
+            }, false);
+
+            const key = $(this).attr('key');
+            if (key === 'backspace' && snakeEnabled) {
+                backspacePresses++;
+            }
+
+            if (backspacePresses >= 2 && snakeEnabled) {
+                backspacePresses = 0;
+                if (!snakeLoaded) {
+                    $("#snake").load("snake.html");
+                    snakeLoaded = true;
+                }
+                setTab('snake');
+            }
+        });
+
+
+    });
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+    @font-face {
+        font-family: "FjallaOne";
+        src: url('fonts/FjallaOne.ttf') format('truetype');
+    }
+
+    body {
+        font-family: 'Lato', sans-serif !important;
+        user-select: none;
+        overflow: hidden;
+    }
+
+    .UI-CONTAINER {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        overflow: hidden;
+        transition-duration: 1s;
+    }
+
+    .laptop {
+        background-color: rgb(174, 174, 174);
+        width: 130vh;
+        height: 80vh;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0.1vw 0.1vw 0.6vw rgba(255, 255, 255, 0.6);
+        border-top-left-radius: 3vh;
+        border-top-right-radius: 3vh;
+        transition-duration: 0.5s;
+    }
+
+    .keyboard {
+        background-color: rgb(114, 114, 114);
+        width: 160vh;
+        height: 80vh;
+        position: fixed;
+        -webkit-transform: perspective(130vh) rotateX(50deg);
+        -moz-transform: perspective(130vh) rotateX(50deg);
+        transform: perspective(130vh) rotateX(50deg);
+
+        margin-top: 120vh;
+        box-shadow: 1vh 3vh 3vh black;
+        padding-top: 12vh;
+        padding-left: 2.5vh;
+        padding-right: 2.5vh;
+    }
+
+    .keyboard .row {
+        display: flex;
+    }
+
+    .keyboard .row .key {
+        width: 9vh;
+        height: 9vh;
+        background-color: rgb(106, 104, 104);
+        margin: 1vh;
+        box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
+        border-radius: 2vh;
+        display: flex;
+    }
+
+    .keyboard .row .key.medium {
+        width: 13vh;
+    }
+
+    .keyboard .row .key.long {
+        width: 17vh;
+    }
+
+    .keyboard .row .key:hover {
+        background-color: rgb(137, 132, 132);
+    }
+
+    .keyboard .row .key:active {
+        background-color: rgb(127, 122, 122);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .keyboard .row .key label {
+        color: white;
+        font-size: 2.75vh;
+        width: 100%;
+        text-align: center;
+        margin-top: 3vh;
+    }
+
+    .screen {
+        background: #c4c4c4; /* Old browsers */
+        background: -moz-linear-gradient(left, #c4c4c4 0%, #ffffff 50%, #c4c4c4 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #c4c4c4 0%, #ffffff 50%, #c4c4c4 100%);
+        width: calc(100% - 5vw);
+        height: calc(100% - 5vw);
+        box-shadow: inset 0 0 0.9vw rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: auto;
+        overflow-y: scroll;
+        border-radius: 0.5vh;
+    }
+
+    .engines {
+        width: 68%;
+        height: auto;
+        min-height: 80vh;
+        margin: 0 16% 5vh;
+        overflow: hidden;
+    }
+
+    .engines h1 {
+        color: #E80000;
+        font-weight: 400;
+        font-size: 3.5vh;
+        margin-top: 1vh;
+        margin-left: 1vh;
+        position: absolute;
+    }
+
+    .engines h1.echo {
+        position: absolute;
+        font-size: 8vh;
+        opacity: 0.15;
+        margin-top: -1vh;
+        margin-left: -1vh;
+    }
+
+    .engines-container {
+        display: flex;
+        padding: 2vh;
+        flex-wrap: wrap;
+        margin-top: 3vh;
+        justify-content: start;
+    }
+
+    .engine-item {
+        width: 31%;
+        height: 27vh;
+        margin: 1%;
+        background-color: white;
+        box-shadow: 0.3vh 0.3vh 0.2vh rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        transition-duration: 0.1s;
+        outline: 0 solid rgba(0, 0, 0, 0);
+    }
+
+    .engine-item.disabled {
+        opacity: 0.75;
+    }
+
+    .engine-item.selected {
+        background-color: #ffbbbb;
+    }
+
+    .engine-item:hover {
+        outline: 0.5vh solid #E80000;
+        box-shadow: 0.3vh 0.3vh 0.2vh 0.5vh rgba(0, 0, 0, 0.2);
+    }
+
+    .engine-item .icon {
+        width: calc(100% - 2vh);
+        height: calc(20vh - 2vh);
+        position: relative;
+        padding: 1vh;
+    }
+
+    .engine-item .icon img {
+        max-width: 80%;
+        max-height: 90%;
+        margin-left: 10%;
+        margin-top: 5%;
+        position: relative;
+    }
+
+    .engine-item .info {
+        height: 6vh;
+        width: calc(100% - 1vh);
+        background-color: #E80000;
+        padding: 0.5vh
+    }
+
+    .engine-item .info .name {
+        font-size: 2vh;
+        color: white;
+        font-weight: bold;
+    }
+
+    .engine-item .info .detail {
+        font-size: 1.2vh;
+        color: white;
+        font-weight: 400;
+    }
+
+    .engine-item .info .price {
+        font-size: 2vh;
+        color: white;
+        font-weight: 400;
+        float: right;
+        right: 0;
+        position: relative;
+    }
+
+    .engine-item .info .detail.right {
+        float: right;
+        right: 0;
+        position: relative;
+    }
+
+    .detail .worse {
+        color: #3d1818;
+    }
+
+    .detail .better {
+        color: #07cb07;
+    }
+
+    #header {
+        width: 70%;
+        height: 6vh;
+        background-color: rgba(150, 30, 30, 0.65);
+        z-index: 9999;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 6vh;
+        display: inline-flex;
+        position: absolute;
+        backdrop-filter: blur(0.25vh);
+    }
+
+    #header .option {
+        height: 5.5vh;
+        width: auto;
+        font-weight: 300 !important;
+        border-top: 0.5vh solid rgba(0, 0, 0, 0);
+
+        margin-top: -1vh;
+
+    }
+
+    #header .option.left {
+        margin-left: auto;
+    }
+
+    #header .option div {
+        margin-top: 0.5vh;
+        height: calc(100% + 0.5vh);
+        width: auto;
+
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        transition-duration: 0.15s;
+    }
+
+    #header .option h1 {
+        font-family: 'Lato', sans-serif !important;
+        font-weight: 300;
+        font-size: calc(0.85vw + 20%);
+        color: white;
+    }
+
+    #header .option:hover, #header .option.active {
+        border-top: 0.5vh solid white;
+        transition-duration: 0.15s;
+    }
+
+    #header .option div:hover, #header .option.active div {
+        background-color: rgba(250, 20, 20, 0.25);
+    }
+
+    .main {
+        width: 100%;
+        height: 40vh;
+        background-size: cover;
+        background-position: center;
+        clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+    }
+
+    .main.img1 {
+        background-image: url("img/img1.jpg");
+        filter: hue-rotate(-8deg);
+        background-position-y: top;
+    }
+
+    .cart {
+        display: none;
+        margin-top: 9vh;
+        margin-left: 3vh;
+        position: relative;
+    }
+
+    .cart .icon img {
+        height: 20vh;
+        width: 20vh;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: solid 4px #E80000;
+        background-color: white;
+        padding: 1vh;
+    }
+
+    .cart h2 {
+        color: #E80000;
+        font-size: 3vh;
+    }
+
+    .cart p {
+        color: #E80000;
+        font-size: 2vh;
+    }
+
+    .cart .button, .purchased-modal .button {
+        width: 20vh;
+        height: 4vh;
+        background-color: #E80000;
+        color: white;
+        outline: 0;
+        border: 0;
+        font-weight: bold;
+        transition-duration: 0.15s;
+        cursor: pointer;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+
+    .cart .button:hover, .purchased-modal .button:hover {
+        transform: scale(1.1);
+    }
+
+    .purchased-modal {
+        display: none;
+        position: fixed;
+        width: 40vh;
+        height: 15vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #E80000;
+        padding: 3vh;
+        z-index: 100;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .purchased-modal h2 {
+        color: white;
+        font-size: 2.25vh;
+    }
+
+    .purchased-modal .button {
+        background-color: white;
+        color: #E80000;
+        position: absolute;
+        bottom: 3vh;
+        right: 3vh;
+    }
+
+    .cant-use-span {
+        font-size: 1.1vh;
+        color: white;
+        margin-left: 0.4vh;
+    }
+
+    .tutorial-video {
+        padding-bottom: 10%;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .snake {
+        overflow: hidden;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #CBCBCB;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #A90101;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #820000;
+    }
+
+    ::-moz-selection { /* Code for Firefox */
+        color: red;
+        background: yellow;
+    }
+
+    ::selection {
+        color: #FFFFFF;
+        background: #E80000;
+    }
+</style>

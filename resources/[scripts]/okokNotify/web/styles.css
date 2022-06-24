@@ -1,0 +1,47 @@
+html {
+	font-size: calc(16 / 19.2 * 1vw);
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+	html {
+		font-size: calc(16 / 10.8 * 1vh);
+	}
+}
+
+#container {
+	position: fixed;
+	top: 1.5rem;
+	width: 18rem;
+}
+
+.notification {
+	display: flex;
+	align-items: center;
+	background-color: rgba(20, 20, 20, 0.85);
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	padding: 1.25rem;
+	border-radius: 0.625rem;
+	--color: transparent;
+	border-left: 0.25rem solid var(--color);
+	box-sizing: border-box;
+	margin-bottom: 0.5rem;
+}
+
+.icon {
+	font-size: 1.5rem;
+	margin-right: 1.25rem;
+	color: var(--color);
+}
+
+.content {
+	flex-grow: 1;
+}
+
+.title {
+	font-weight: 700;
+}
+
+.message {
+	font-size: 0.875rem;
+}

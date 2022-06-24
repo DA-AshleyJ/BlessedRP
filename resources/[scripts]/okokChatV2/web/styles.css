@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+* {
+    font-family: 'Tajawal', sans-serif;
+}
+
+.chat-window {
+    position: absolute;
+    top: 2.5%;
+    left: 2.055%;
+    width: 38%;
+    height: 33.3% !important;
+    max-width: 27.5%;
+    background-color: rgba(0, 0, 0, 0.0) !important;
+}
+
+.msg {
+    font-family: 'Tajawal', sans-serif;
+    color: #fff;
+    font-size: calc(1.8vh);
+    filter: url(#svgDropShadowFilter);
+    line-height: calc(2.7vh * 1.2);
+    margin-bottom: 0.9%;
+}
+
+.chat-messages {
+    margin: 0;
+    height: 100%;
+}
+
+.chat-message {
+    display: block !important;
+    padding: 0.6vw;
+    padding-top: 0.6vw;
+    padding-bottom: 0.7vw;
+    border-radius: 0.625rem;
+    width: 75.6%;
+    overflow: hidden;
+    word-break: break-word;
+    box-sizing: border-box;
+    box-shadow: 0rem 0rem 0.625rem -0.3125rem rgba(0, 0, 0, 1);
+    line-height: 1;
+}
+
+.chat-message div {
+    line-height: 1 !important;
+}
+
+.message {
+    margin-top: 0.9%;
+    font-weight: 300;
+}
+
+.time {
+    font-size: 0.875rem;
+    font-size: calc(1.3vh);
+    color: #e1e1e1;
+}
+
+.msg > span > span > b {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: normal;
+    vertical-align: baseline;
+    padding-right: 0.6875rem;
+    line-height: 1;
+    font-size: calc(2.7vh);
+}
+
+.msg > span > span > span {
+    vertical-align: baseline;
+}
+
+.msg i:first-of-type {
+    font-style: normal;
+    color: #fff;
+}
+
+.chat-input {
+    font-size: 1.65vh;
+    position: absolute;
+    top: 37%;
+    left: 2.055%;
+    width: 38%;
+    max-width: 20.8%;
+    box-sizing: border-box;
+}
+
+.chat-input > div.input {
+    background-color: rgba(27, 29, 32, 0.95);
+    border-radius: 0.625rem;
+}
+
+.chat-input .prefix {
+    height: 100%;
+    vertical-align: middle;
+    padding-left: 0.5vh;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.input {
+    align-items: center;
+}
+
+.prefix {
+    line-height: 3.80vh !important;
+}
+
+.suggestions {
+    margin-top: 0.9%;
+    list-style-type: none;
+    padding: 0.9%;
+    padding-left: 6.54%;
+    font-size: calc(1.7vh);
+    box-sizing: border-box;
+    color: white;
+    background-color: rgba(31, 94, 255, 0.9);
+    width: 100%;
+    border-radius: 0.625rem;
+    border: none;
+    box-shadow: 0rem 0rem 0.625rem -0.3125rem rgba(0, 0, 0, 1);
+}
+
+.suggestion {
+    font-size: calc(1.8vh);
+    margin-bottom: 0.03125rem;
+}
+
+textarea {
+    resize: none;
+    font-size: calc(2vh);
+    color: #fff;
+    line-height: 1.85vh !important;
+    padding-top: 3%;
+}
+
+.multiline {
+    margin-left: 0;
+    text-indent: 0;
+}
+
+.fas {
+    vertical-align: middle;
+}
+
+/* START STAFF */
+
+.staff {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(19, 138, 70, 0.9) 100%);
+}
+
+.fa-shield-alt {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #1ebc62;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END STAFF */
+
+/* START ONLY STAFF */
+
+.staffonly {
+    background: rgba(42, 42, 42, 0.9);
+}
+
+.fa-eye-slash {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #1ebc62;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END ONLY STAFF */
+
+/* START SERVER ANNOUNCEMENT */
+
+.server-msg {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(204, 61, 61, 0.9) 100%);
+}
+
+.fa-exclamation-circle {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #cc3d3d;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END SERVER ANNOUNCEMENT */
+
+/* START TWITCH */
+
+.twitch {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(96, 67, 139, 0.9) 100%);
+}
+
+.fa-twitch {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #9c70de;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END TWITCH */
+
+/* START YOUTUBE */
+
+.youtube {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(101, 0, 0, 0.9) 100%);
+}
+
+.fa-youtube {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #ff0000;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END YOUTUBE */
+
+/* START TWITTER */
+
+.twitter {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(25, 107, 143, 0.9) 100%);
+}
+
+.fa-twitter {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #2aa9e0;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END TWITTER */
+
+/* START SYSTEM */
+
+.system {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(134, 84, 23, 0.9) 100%);
+}
+
+.fa-cog {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #df7b00;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END SYSTEM */
+
+/* START ADVERTISEMENT */
+
+.advertisement {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(84, 150, 38, 0.9) 100%);
+}
+
+.fa-ad {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #81db44;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END ADVERTISEMENT */
+
+/* START POLICE */
+
+.police {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(40, 55, 116, 0.9) 100%);
+}
+
+.fa-bullhorn {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #4a6cfd;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END POLICE */
+
+/* START AMBULANCE */
+
+.ambulance {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(152, 113, 22, 0.9) 100%);
+}
+
+.fa-ambulance {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #e3a71b;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END AMBULANCE */
+
+/* START OOC */
+
+.ooc {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(125, 125, 125, 0.9) 100%);
+}
+
+.fa-door-open {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #ababab;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END OOC */
+
+/* START ME */
+
+.me {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(121, 184, 250, 0.9) 100%);
+}
+
+.me-icon {
+    background-color: #79b8fa;
+}
+
+/* END ME */
+
+/* START DO */
+
+.do {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(121, 250, 164, 0.9) 100%);
+}
+
+.do-icon {
+    background-color: #79faa4;
+}
+
+/* END DO */
+
+/* START TRY */
+
+.try {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(243, 73, 113, 0.9) 100%);
+}
+
+.try-icon {
+    background-color: #f34971;
+}
+
+/* END TRY */
+
+/* START ANONYMOUS */
+
+.anonymous {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(9, 78, 33, 0.9) 100%);
+}
+
+.fa-mask {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #2e874d;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END ANONYMOUS */
+
+/* START JOBS */
+
+.jobchat {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(53, 219, 194, 0.9) 100%);
+}
+
+.fa-briefcase {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #35dbc2;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END JOBS */
+
+/* START TIMEOUT */
+
+.muted {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(223, 123, 0, 0.9) 100%);
+}
+
+.fa-gavel {
+    color: rgba(42, 42, 42, 0.9);
+    background-color: #df7b00;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+/* END TIMEOUT */
+
+/* START PM */
+
+.pm {
+    background: linear-gradient(90deg, rgba(42, 42, 42, 0.9) 0%, rgba(113, 81, 156, 0.9) 100%);
+}
+
+.fa-comment {
+    color: rgba(42, 42, 42, 0.9);
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+}
+
+.pm-icon {
+    background-color: #71519c;
+}
+
+/* END PM */

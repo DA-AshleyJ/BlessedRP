@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+	background-color: transparent !important;
+	overflow: hidden;
+	font-family: 'Roboto', sans-serif;
+    margin: 0;
+
+    display: flex; justify-content: center; align-items: center; align-content: center;
+
+    margin-top: 270px;
+}
+
+* { font-family: 'Roboto', sans-serif; }
+
+*:focus {
+	outline: none;
+}
+
+/* Hide arrows from number input */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
+
+#passhack-div {
+    width: 50%; height: 509px;
+    background-color: #2a3950;
+    border-radius: 5px;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+}
+
+#passhack-prompt {
+    color: white;
+    font-size: 30px;
+    margin: 15px;
+}
+
+#passhack-input {
+    background-color: #42506b;
+    border: none;
+    width: 400px; height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+#passhack-hint {
+    color: white;
+    font-size: 12px;
+}
+
+#prog-bar {
+    height: 6px;
+    background-color: #838994;
+    width: 100%;
+    position: relative;
+    bottom: -135px;
+
+    transition: .3s;
+}
